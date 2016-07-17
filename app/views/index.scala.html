@@ -7,12 +7,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html>
 <head>
-<title>Steel Industry a Industrial Category Flat Bootstrap Responsive website Template | Home :: w3layouts</title>
+<title>Our project ClAK</title>
 <!-- Custom Theme files -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Steel Industry Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
-	SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
+<meta name="keywords" content="Taller, Ricardo, corazon, papel, consultoria" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- //Custom Theme files -->
 <link href="@routes.Assets.versioned("css/bootstrap.css")" type="text/css" rel="stylesheet" media="all">
@@ -28,6 +27,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!--circle-chart-->
 <script src="@routes.Assets.versioned("js/jquery.circlechart.js")"></script>
 <!--circle-chart-->
+	<style>
+		input[type=submit] {
+		background-color: #988AEE;
+		border: none;
+		color: white;
+		padding: 16px 32px;
+		text-decoration: none;
+		margin: 4px 2px;
+		cursor: pointer;
+		}
+	</style>
 </head>
 <body>
 	<!--header-->
@@ -35,42 +45,24 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<nav class="navbar navbar-default">
 			<div class="container">
 				<div class="navbar-header navbar-left">
-					<h1><a href="index.html">STEEL <span>Industry</span></a></h1>
+					<h1><a >ClAK <span>Consultants</span></a></h1>
 				</div>
 				<!--navigation-->
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
+
 				<div class="header-right">
 					<div class="top-nav-text">
-						<p>Call Us: <span>+00 111 2222 333</span></p>
-						<div id="sb-search" class="sb-search">
-							<form action="#" method="post">
-								<input class="sb-search-input" name="Search" placeholder="Enter your search term..." id="search" required="">
-								<input class="sb-search-submit" type="submit" value="">
-								<span class="sb-icon-search"> </span>
-							</form>
-							<div class="clearfix"> </div>
-							<!-- search-scripts -->
-							<script src="@routes.Assets.versioned("js/classie.js")"></script>
-							<script src="@routes.Assets.versioned("js/uisearch.js")"></script>
-								<script>
-									new UISearch( document.getElementById( 'sb-search' ) );
-								</script>
-							<!-- //search-scripts -->
+
+
 						</div>
 					</div>
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">					
 						<ul class="nav navbar-nav navbar-left cl-effect-14">
-							<li><a href="index.html" class="active">Home</a></li>
-							<li><a href="#team" class="scroll">Team</a></li>
-							<li><a href="#services" class="scroll">Services</a></li>
-							<li><a href="#portfolio" class="scroll">Portfolio</a></li>
-							<li><a href="#contact" class="scroll">Contact Us</a></li>			
+							<li><a href="@routes.HomeController.index()" class="active">Inicio</a></li>
+							<li><a href="#team" class="scroll">Equipo</a></li>
+							<li><a href="#services" class="scroll">Modelos de solución</a></li>
+							<li><a href="#portfolio" class="scroll">Galería</a></li>
+
 						</ul>		
 						<div class="clearfix"> </div>
 					</div><!--//navigation-->
@@ -88,37 +80,37 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<ul class="rslides" id="slider3">
 						<li>
 							<div class="banner-text-info">
-								<h2>WELCOME TO STEEL INDUSTRY</h2>	
-								<h4>Lorem Ipsum was popularised In sit amet sapien eros Integer</h4>	
+								<h2>Bienvenido a Corazón de Papel</h2>
+								<h4>Nuestra herramienta de solución para el Taller Ricardo Corazón de Papel</h4>
 								<div class="more">
-									<a href="#" data-toggle="modal" data-target="#myModal"> Read More</a>
+									<a href="#" data-toggle="modal" data-target="#myModal"> Leer más sobre el Taller</a>
 								</div>	
 							</div>	
 						</li>
 						<li>
 							<div class="banner-text-info">
-								<h3>VIVAMUS MAXIMUS ODIO EU</h3>		
-								<h4>In sit amet sapien eros Integer,Lorem Ipsum was popularised </h4>	
+								<h3>Podrás ver los resultados de los tres modelos propuestos</h3>
+								<h4>A través de tableros de control </h4>
 								<div class="more">
-									<a href="#" data-toggle="modal" data-target="#myModal"> Read More</a>
+									<a href="#" data-toggle="modal" data-target="#myModal"> Leer más sobre el Taller</a>
 								</div>	
 							</div>	
 						</li>
 						<li>
 							<div class="banner-text-info">
-								<h3>ETIAM SODALES LACUS DOLOR</h3>		
-								<h4>Popularised In sit amet sapien eros Integer was Lorem Ipsum </h4>	
+								<h3>Conocerás al equipo consultor</h3>
+								<h4>y una galería de fotos del proceso de elaboración de libretas </h4>
 								<div class="more">
-									<a href="#" data-toggle="modal" data-target="#myModal"> Read More</a>
+									<a href="#" data-toggle="modal" data-target="#myModal"> Leer más sobre el Taller</a>
 								</div>		
 							</div>		
 						</li>
 						<li>
 							<div class="banner-text-info">
-								<h3>SED EGESTAS LIBERO VITAE ELIT</h3>		
-								<h4>Popularised In sit amet sapien eros Integer was Lorem Ipsum </h4>	
+								<h3>¡Anímate a probar nuestros modelos!</h3>
+								<h4>y podrás ver diferentes medidas de desempeño del proceso de producción de libretas </h4>
 								<div class="more">
-									<a href="#" data-toggle="modal" data-target="#myModal"> Read More</a>
+									<a href="#" data-toggle="modal" data-target="#myModal"> Leer más sobre el Talle</a>
 								</div>		
 							</div>		
 						</li>
@@ -137,7 +129,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<section>
 					<div class="modal-body modal-spa">
 						<img class="img-responsive" src="@routes.Assets.versioned("images/slid.jpg")" alt="">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras rutrum iaculis enim, non convallis felis mattis at. Donec fringilla lacus eu pretium rutrum. Cras aliquet congue ullamcorper. Etiam mattis eros eu ullamcorper volutpat. Proin ut dui a urna efficitur varius. uisque molestie cursus mi et congue consectetur adipiscing elit cras rutrum iaculis enim, Lorem ipsum dolor sit amet, non convallis felis mattis at. Maecenas sodales tortor ac ligula ultrices dictum et quis urna. Etiam pulvinar metus neque, eget porttitor massa vulputate in. Fusce lacus purus, pulvinar ut lacinia id, sagittis eu mi. Vestibulum eleifend massa sem, eget dapibus turpis efficitur at. Aliquam viverra quis leo et efficitur. Nullam arcu risus, scelerisque quis interdum eget, fermentum viverra turpis. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut At vero eos </p>
+						<p>El Taller de encuadernación Ricardo Corazón de papel es una empresa constituida legalmente como una sociedad de régimen simplificado por Ricardo Aguirre Piñeros desde hace casi catorce años. Esta sociedad está dedicada a la encuadernación artesanal de libretas, libros, álbumes y agendas, además de ofrecer el servicio de restauración de libros. Es considerada una empresa pequeña, ya que cuenta con 20 empleados distribuidos entre sus dos sedes. Adicionalmente, esta empresa se encuentra ubicada en  el barrio las nieves y la otra en el centro comercial plaza treinta y nueve (39). Cabe resaltar que el trabajo realizado se enfocó en el taller ubicado en el barrio las nieves con un total de nueve (9) empleados incluyendo a  Ricardo (su dueño). Este taller cuenta con dos líneas de producto; la primera es aquella donde se produce todo lo relacionado a encuadernación; entre esta se encuentran las libretas, álbumes, cuadernos y agendas. La segunda línea que manejan es la restauración de libros donde a estos se les repara la portada dejando esta lo más parecido a la original posible.  </p>
 					</div>
 				</section>
 			</div>
@@ -148,11 +140,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!--about-->
 	<div class="about">
 		<div class="container">
-			<h3 class="title">About Us </h3>
+			<h3 class="title">Acerca de ClAK Consultants </h3>
 			<div class="about-text">
-				<h4>Nulla at dolor at ipsum convallis pulvinar a non nunc non leo sollicitudin </h4>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras rutrum iaculis enim, non convallis felis mattis at. Donec fringilla lacus eu pretium rutrum. Cras aliquet congue ullamcorper. Etiam mattis eros eu ullamcorper volutpat. Proin ut dui a urna efficitur varius.
-					uisque molestie cursus mi et congue consectetur adipiscing elit cras rutrum iaculis enim, Lorem ipsum dolor sit amet, non convallis felis mattis at. Maecenas sodales tortor ac ligula ultrices dictum et quis urna. Etiam pulvinar metus neque, eget porttitor massa vulputate in. Fusce lacus purus, pulvinar ut lacinia id, sagittis eu mi. Vestibulum eleifend massa sem, eget dapibus turpis efficitur at. Aliquam viverra quis leo et efficitur. Nullam arcu risus, scelerisque quis interdum eget, fermentum viverra turpis. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut At vero eos</p>
+				<h4>Asesorías y consultorías al alcance de sus manos</h4>
+				<p>Aclakase Consultores S.A se dedica a prestar excelentes consultorías, asesorías e investigaciones sobre las operaciones en empresas u organizaciones mediante el uso de modelos probabilísticos. Resolvemos los problemas a través de soluciones novedosas y herramientas de alta calidad.  </p>
 			</div>
 		</div>
 	</div>
@@ -161,21 +152,22 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="team" id="team">
 		<div class="team-info">
 			<div class="container">
-				<h3 class="title">Our Team</h3>
-				<div class="team-row">
+				<h3 class="title">Nuestro equipo</h3>
+				<div class="team-row" style="
+    margin-left: 200px;0
+    ">
 					<div class="col-md-3 team-grids">
 						<div class="team-img">
 							<img class="img-responsive" src="@routes.Assets.versioned("images/img1.jpg")" alt="">
 							<div class="captn">
 								<div class="captn-top">
-									<h4>Edwards Doe</h4>
-									<p>Aenean pulvinar ac enimet posuere tincidunt velit Utin tincidunt</p>
+									<h4>Andrea Ceron</h4>
+									<p>Ingeniera industrial de la Universidad de los Andes</p>
 								</div>
 								<div class="social-icons">
 									<ul>
-										<li><a href="#"> </a></li>
-										<li><a href="#" class="fb"> </a></li>
-										<li><a href="#" class="gp"> </a></li>
+
+										<li><a href="https://www.facebook.com/Andrea.CeronSatizabal" class="fb"> </a></li>
 									</ul>
 									<div class="clearfix"> </div>
 								</div>
@@ -187,14 +179,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<img class="img-responsive" src="@routes.Assets.versioned("images/img2.jpg")" alt="">
 							<div class="captn">
 								<div class="captn-top">
-									<h4>Mark Sophia</h4>
-									<p>Aenean pulvinar ac enimet posuere tincidunt velit Utin tincidunt</p>
+									<h4>Claudia Bedoya</h4>
+									<p>Ingeniera industrial y de sistemas de la Universidad de los Andes</p>
 								</div>
 								<div class="social-icons">
 									<ul>
-										<li><a href="#"> </a></li>
-										<li><a href="#" class="fb"> </a></li>
-										<li><a href="#" class="gp"> </a></li>
+										<li><a href="https://www.facebook.com/clau.bedoyam" class="fb"> </a></li>
 									</ul>
 									<div class="clearfix"> </div>
 								</div>
@@ -206,40 +196,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<img class="img-responsive" src="@routes.Assets.versioned("images/img3.jpg")" alt="">
 							<div class="captn">
 								<div class="captn-top">
-									<h4>Michael amet</h4>
-									<p>Aenean pulvinar ac enimet posuere tincidunt velit Utin tincidunt</p>
+									<h4>Kathya Amaya</h4>
+									<p>Ingeniera industrial de la Universidad de los Andes</p>
 								</div>
 								<div class="social-icons">
 									<ul>
-										<li><a href="#"> </a></li>
-										<li><a href="#" class="fb"> </a></li>
-										<li><a href="#" class="gp"> </a></li>
+										<li><a href="https://www.facebook.com/K.Marcela.Amaya" class="fb"> </a></li>
 									</ul>
 									<div class="clearfix"> </div>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="col-md-3 team-grids">
-						<div class="team-img">
-							<img class="img-responsive" src="@routes.Assets.versioned("images/img4.jpg")" alt="">
-							<div class="captn">
-								<div class="captn-top">
-									<h4>Daniel Nyari</h4>
-									<p>Aenean pulvinar ac enimet posuere tincidunt velit Utin tincidunt</p>
-								</div>
-								<div class="social-icons">
-									<ul>
-										<li><a href="#"> </a></li>
-										<li><a href="#" class="fb"> </a></li>
-										<li><a href="#" class="gp"> </a></li>
-									</ul>
-									<div class="clearfix"> </div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="clearfix"> </div>
+
 				</div>
 			</div>
 		</div>
@@ -248,25 +217,47 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!--services-->
 	<div id="services" class="services">
 		<div class="container">
-			<h3 class="title">Why Choose Us</h3>
+			<h3 class="title">Modelos</h3>
 			<div class="services-info">
 				<div class="col-md-6 services-grids">
+
 					<div class="services-left">
-						<span class="glyphicon glyphicon-cog"></span>
+						<span class="glyphicon glyphicon-check"></span>
 					</div>
+
 					<div class="services-right">
-						<h4>Vivamus finibus lias</h4>
-						<p>Itaque earum rerum hic tenetur a sapiente delectus reiciendis maiores alias </p>
+						<h4>Asignación de trabajadores</h4>
+						<p>Acá podrás asignar de manera óptima los trabajadores de acuerdo a su tasa de procesamiento de libretas, a través de un algoritmo de programación dinámica. Tendrás que indicar la información de cada trabajador. </p>
+						<p>Ingresa el número de trabajadores:</p>
+						@helper.form(action = routes.HomeController.index, 'class -> "contact-form") {
+						<form >
+							<input type="text"  placeholder="Name" required>
+							<input type="submit" value="¡Ir!">
+							<div class="clearfix"></div>
+						</form>
+						}
+						<div class="more">
+
+						</div>
 					</div>
+
+
+
 					<div class="clearfix"> </div>
 				</div>
 				<div class="col-md-6 services-grids">
 					<div class="services-left">
-						<span class="glyphicon glyphicon-check"></span>
+						<span class="glyphicon glyphicon-star"></span>
 					</div>
 					<div class="services-right">
-						<h4>Aliquam faucibus </h4>
-						<p>Itaque earum rerum hic tenetur a sapiente delectus reiciendis maiores alias </p>
+						<h4>Una buena opción</h4>
+						<p>Acá puedes ver en conjuto la mejor asignación de los empleados, e indicadores de dicha asignación en el sistema de producción de libretas</p>
+						@helper.form(action = routes.HomeController.index, 'class -> "contact-form") {
+						<form >
+							<input type="submit" value="¡Ir!">
+							<div class="clearfix"></div>
+						</form>
+						}
 					</div>
 					<div class="clearfix"> </div>
 				</div>
@@ -275,218 +266,102 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="services-info services-row2">
 				<div class="col-md-6 services-grids">
 					<div class="services-left">
-						<span class="glyphicon glyphicon-time"></span>
+						<span class="glyphicon glyphicon-check"></span>
 					</div>
 					<div class="services-right">
-						<h4>Donec et nibh massa</h4>
-						<p>Itaque earum rerum hic tenetur a sapiente delectus reiciendis maiores alias </p>
+						<h4>Indicadores del sistema</h4>
+						<p>Acá podras ver algunos indicadores del sistemas de producción de libretas, y estimar dependiendo de los empleados en cáda estación, cuándo se terminará un pedido determinado a través de un modelo de Redes de Jackson </p>
+						@helper.form(action = routes.HomeController.index, 'class -> "contact-form") {
+						<form >
+							<input type="submit" value="¡Ir!">
+							<div class="clearfix"></div>
+						</form>
+						}
 					</div>
 					<div class="clearfix"> </div>
 				</div>
-				<div class="col-md-6 services-grids">
-					<div class="services-left">
-						<span class="glyphicon glyphicon-heart"></span>
-					</div>
-					<div class="services-right">
-						<h4>Sed augue eget massa</h4>
-						<p>Itaque earum rerum hic tenetur a sapiente delectus reiciendis maiores alias </p>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="clearfix"> </div>
 			</div>
 		</div>
 	</div>
 	<!--//services-->
 	<!--portfolio-->
 	<div id="portfolio" class="portfolio">
-		<h3 class="title">Portfolio</h3>
+		<h3 class="title">Galería</h3>
 		<div class="sap_tabs">			
 			<div id="horizontalTab">
 				<ul class="resp-tabs-list">
-					<li class="resp-tab-item"><span>All</span></li>
-					<li class="resp-tab-item"><span>Category1</span></li>
-					<li class="resp-tab-item"><span>Category2</span></li>
-					<li class="resp-tab-item"><span>Category3</span></li>
-					<li class="resp-tab-item"><span>Category4</span></li>					
-				</ul>	
+					<li >¡Mira nuestra galería de fotos!</li>
+				</ul>
 				<div class="clearfix"> </div>	
 				<div class="resp-tabs-container">
 					<div class="tab-1 resp-tab-content">
 						<div class="col-md-3 portfolio-grids">
-							<a href="@routes.Assets.versioned("images/g1.jpg")" data-lightbox="example-set" data-title="Lorem Ipsum is simply dummy the when an unknown galley of type and scrambled it to make a type specimen.">
+							<a href="@routes.Assets.versioned("images/g1.jpg")" data-lightbox="example-set" data-title="Proceso de elaboración de una libreta.">
 								<img src="@routes.Assets.versioned("images/g1.jpg")" class="img-responsive zoom-img" alt=""/>
 								<div class="b-wrapper">
-									<h5>Our Portfolio</h5>
+									<h5>Cortado de la portada</h5>
 								</div>
 							</a>
 						</div>
 						<div class="col-md-3 portfolio-grids">
-							<a href="@routes.Assets.versioned("images/g2.jpg")" data-lightbox="example-set" data-title="Lorem Ipsum is simply dummy the when an unknown galley of type and scrambled it to make a type specimen.">
+							<a href="@routes.Assets.versioned("images/g2.jpg")" data-lightbox="example-set" data-title="Proceso de elaboración de una libreta.">
 								<img src="@routes.Assets.versioned("images/g2.jpg")" class="img-responsive zoom-img" alt=""/>
 								<div class="b-wrapper">
-									<h5>Our Portfolio</h5>
+									<h5>Cuadernillo, libretas y portada en proceso</h5>
 								</div>
 							</a>
 						</div>
 						<div class="col-md-3 portfolio-grids">
-							<a href="@routes.Assets.versioned("images/g3.jpg")" data-lightbox="example-set" data-title="Lorem Ipsum is simply dummy the when an unknown galley of type and scrambled it to make a type specimen.">
+							<a href="@routes.Assets.versioned("images/g3.jpg")" data-lightbox="example-set" data-title="Proceso de elaboración de una libreta.">
 								<img src="@routes.Assets.versioned("images/g3.jpg")" class="img-responsive zoom-img" alt=""/>
 								<div class="b-wrapper">
-									<h5>Our Portfolio</h5>
+									<h5>Despuntando la libreta</h5>
 								</div>
 							</a>
 						</div>
 						<div class="col-md-3 portfolio-grids">
-							<a href="@routes.Assets.versioned("images/g4.jpg")" data-lightbox="example-set" data-title="Lorem Ipsum is simply dummy the when an unknown galley of type and scrambled it to make a type specimen.">
+							<a href="@routes.Assets.versioned("images/g4.jpg")" data-lightbox="example-set" data-title="Proceso de elaboración de una libreta.">
 								<img src="@routes.Assets.versioned("images/g4.jpg")" class="img-responsive zoom-img" alt=""/>
 								<div class="b-wrapper">
-									<h5>Our Portfolio</h5>
+									<h5>Cuadernillos</h5>
 								</div>
 							</a>
 						</div>
 						<div class="col-md-3 portfolio-grids">
-							<a href="@routes.Assets.versioned("images/g5.jpg")" data-lightbox="example-set" data-title="Lorem Ipsum is simply dummy the when an unknown galley of type and scrambled it to make a type specimen.">
+							<a href="@routes.Assets.versioned("images/g5.jpg")" data-lightbox="example-set" data-title="Proceso de elaboración de una libreta.">
 								<img src="@routes.Assets.versioned("images/g5.jpg")" class="img-responsive zoom-img" alt=""/>
 								<div class="b-wrapper">
-									<h5>Our Portfolio</h5>
+									<h5>Uniendo las partes de la portada</h5>
 								</div>
 							</a>
 						</div>
 						<div class="col-md-3 portfolio-grids">
-							<a href="@routes.Assets.versioned("images/g6.jpg")" data-lightbox="example-set" data-title="Lorem Ipsum is simply dummy the when an unknown galley of type and scrambled it to make a type specimen.">
+							<a href="@routes.Assets.versioned("images/g6.jpg")" data-lightbox="example-set" data-title="Proceso de elaboración de una libreta.">
 								<img src="@routes.Assets.versioned("images/g6.jpg")" class="img-responsive zoom-img" alt=""/>
 								<div class="b-wrapper">
-									<h5>Our Portfolio</h5>
+									<h5>Tomando medidas!</h5>
 								</div>
 							</a>
 						</div>
 						<div class="col-md-3 portfolio-grids">
-							<a href="@routes.Assets.versioned("images/g8.jpg")" data-lightbox="example-set" data-title="Lorem Ipsum is simply dummy the when an unknown galley of type and scrambled it to make a type specimen.">
+							<a href="@routes.Assets.versioned("images/g8.jpg")" data-lightbox="example-set" data-title="Proceso de elaboración de una libreta.">
 								<img src="@routes.Assets.versioned("images/g8.jpg")" class="img-responsive zoom-img" alt=""/>
 								<div class="b-wrapper">
-									<h5>Our Portfolio</h5>
+									<h5>Cortado del forro</h5>
 								</div>
 							</a>
 						</div>
 						<div class="col-md-3 portfolio-grids">
-							<a href="@routes.Assets.versioned("images/g7.jpg")" data-lightbox="example-set" data-title="Lorem Ipsum is simply dummy the when an unknown galley of type and scrambled it to make a type specimen.">
+							<a href="@routes.Assets.versioned("images/g7.jpg")" data-lightbox="example-set" data-title="Proceso de elaboración de una libreta.">
 								<img src="@routes.Assets.versioned("images/g7.jpg")" class="img-responsive zoom-img" alt=""/>
 								<div class="b-wrapper">
-									<h5>Our Portfolio</h5>
+									<h5>Cuadernillos encolados secandose</h5>
 								</div>
 							</a>
 						</div>
 						<div class="clearfix"> </div>
 					</div>		
-					<div class="tab-1 resp-tab-content">
-						<div class="col-md-3 portfolio-grids">
-							<a href="@routes.Assets.versioned("images/g8.jpg")" data-lightbox="example-set" data-title="Lorem Ipsum is simply dummy the when an unknown galley of type and scrambled it to make a type specimen.">
-								<img src="@routes.Assets.versioned("images/g8.jpg")" class="img-responsive zoom-img" alt=""/>
-								<div class="b-wrapper">
-									<h5>Our Portfolio</h5>
-								</div>
-							</a>
-						</div>
-						<div class="col-md-3 portfolio-grids">
-							<a href="@routes.Assets.versioned("images/g4.jpg")" data-lightbox="example-set" data-title="Lorem Ipsum is simply dummy the when an unknown galley of type and scrambled it to make a type specimen.">
-								<img src="@routes.Assets.versioned("images/g4.jpg")" class="img-responsive zoom-img" alt=""/>
-								<div class="b-wrapper">
-									<h5>Our Portfolio</h5>
-								</div>
-							</a>
-						</div>
-						<div class="col-md-3 portfolio-grids">
-							<a href="@routes.Assets.versioned("images/g5.jpg")" data-lightbox="example-set" data-title="Lorem Ipsum is simply dummy the when an unknown galley of type and scrambled it to make a type specimen.">
-								<img src="@routes.Assets.versioned("images/g5.jpg")" class="img-responsive zoom-img" alt=""/>
-								<div class="b-wrapper">
-									<h5>Our Portfolio</h5>
-								</div>
-							</a>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-					<div class="tab-1 resp-tab-content">
-						<div class="col-md-3 portfolio-grids">
-							<a href="@routes.Assets.versioned("images/g3.jpg")" data-lightbox="example-set" data-title="Lorem Ipsum is simply dummy the when an unknown galley of type and scrambled it to make a type specimen.">
-								<img src="@routes.Assets.versioned("images/g3.jpg")" class="img-responsive zoom-img" alt=""/>
-								<div class="b-wrapper">
-									<h5>Our Portfolio</h5>
-								</div>
-							</a>
-						</div>
-						<div class="col-md-3 portfolio-grids">
-							<a href="@routes.Assets.versioned("images/g1.jpg")" data-lightbox="example-set" data-title="Lorem Ipsum is simply dummy the when an unknown galley of type and scrambled it to make a type specimen.">
-								<img src="@routes.Assets.versioned("images/g1.jpg")" class="img-responsive zoom-img" alt=""/>
-								<div class="b-wrapper">
-									<h5>Our Portfolio</h5>
-								</div>
-							</a>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-					<div class="tab-1 resp-tab-content">
-						<div class="col-md-3 portfolio-grids">
-							<a href="@routes.Assets.versioned("images/g5.jpg")" data-lightbox="example-set" data-title="Lorem Ipsum is simply dummy the when an unknown galley of type and scrambled it to make a type specimen.">
-								<img src="@routes.Assets.versioned("images/g5.jpg")" class="img-responsive zoom-img" alt=""/>
-								<div class="b-wrapper">
-									<h5>Our Portfolio</h5>
-								</div>
-							</a>
-						</div>
-						<div class="col-md-3 portfolio-grids">
-							<a href="@routes.Assets.versioned("images/g6.jpg")" data-lightbox="example-set" data-title="Lorem Ipsum is simply dummy the when an unknown galley of type and scrambled it to make a type specimen.">
-								<img src="@routes.Assets.versioned("images/g6.jpg")" class="img-responsive zoom-img" alt=""/>
-								<div class="b-wrapper">
-									<h5>Our Portfolio</h5>
-								</div>
-							</a>
-						</div>
-						<div class="col-md-3 portfolio-grids">
-							<a href="@routes.Assets.versioned("images/g4.jpg")" data-lightbox="example-set" data-title="Lorem Ipsum is simply dummy the when an unknown galley of type and scrambled it to make a type specimen.">
-								<img src="@routes.Assets.versioned("images/g4.jpg")" class="img-responsive zoom-img" alt=""/>
-								<div class="b-wrapper">
-									<h5>Our Portfolio</h5>
-								</div>
-							</a>
-						</div>
-						<div class="col-md-3 portfolio-grids">
-							<a href="@routes.Assets.versioned("images/g7.jpg")" data-lightbox="example-set" data-title="Lorem Ipsum is simply dummy the when an unknown galley of type and scrambled it to make a type specimen.">
-								<img src="@routes.Assets.versioned("images/g7.jpg")" class="img-responsive zoom-img" alt=""/>
-								<div class="b-wrapper">
-									<h5>Our Portfolio</h5>
-								</div>
-							</a>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-					<div class="tab-1 resp-tab-content">
-						<div class="col-md-3 portfolio-grids">
-							<a href="@routes.Assets.versioned("images/g2.jpg")" data-lightbox="example-set" data-title="Lorem Ipsum is simply dummy the when an unknown galley of type and scrambled it to make a type specimen.">
-								<img src="@routes.Assets.versioned("images/g2.jpg")" class="img-responsive zoom-img" alt=""/>
-								<div class="b-wrapper">
-									<h5>Our Portfolio</h5>
-								</div>
-							</a>
-						</div>
-						<div class="col-md-3 portfolio-grids">
-							<a href="@routes.Assets.versioned("images/g5.jpg")" data-lightbox="example-set" data-title="Lorem Ipsum is simply dummy the when an unknown galley of type and scrambled it to make a type specimen.">
-								<img src="@routes.Assets.versioned("images/g5.jpg")" class="img-responsive zoom-img" alt=""/>
-								<div class="b-wrapper">
-									<h5>Our Portfolio</h5>
-								</div>
-							</a>
-						</div>
-						<div class="col-md-3 portfolio-grids">
-							<a href="@routes.Assets.versioned("images/g6.jpg")" data-lightbox="example-set" data-title="Lorem Ipsum is simply dummy the when an unknown galley of type and scrambled it to make a type specimen.">
-								<img src="@routes.Assets.versioned("images/g6.jpg")" class="img-responsive zoom-img" alt=""/>
-								<div class="b-wrapper">
-									<h5>Our Portfolio</h5>
-								</div>
-							</a>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
+
 				</div>						
 			</div>
 		</div>
@@ -495,13 +370,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!--skills-->
 	<div class="skills">
 		<div class="container">
-			<h3 class="title">Our Skills</h3>
+			<h3 class="title">Consultoaría ClAK Consultants</h3>
 			<div class="skill-info">
 				<ul>
-					<li><div class="demo demo-1" data-percent="65"></div><p>Creativity</p></li>
-					<li><div class="demo demo-2" data-percent="95"></div><p>Quality</p> </li>
-					<li><div class="demo demo-3" data-percent="85"></div><p>Research</p> </li>
-					<li><div class="demo demo-4" data-percent="72"></div><p>Specialists</p> </li>
+					<li><div class="demo demo-1" data-percent="100"></div><p>Creatividad</p></li>
+					<li><div class="demo demo-2" data-percent="100"></div><p>Calidad</p> </li>
+					<li><div class="demo demo-3" data-percent="100"></div><p>Innovación</p> </li>
+					<li><div class="demo demo-4" data-percent="100"></div><p>¡Chicas!</p> </li>
 				</ul>
 				<script>
 					$('.demo-1').percentcircle();
@@ -522,29 +397,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</div>
 	</div>
 	<!--//skill-->
-	<!--contact -->
-	<div id="contact" class="contact">
-		<div class="team-info">
-			<div class="container">
-				<h3 class="title">Contact Us</h3>
-				<div class="contact-form">
-					<form action="#" method="post">
-						<input type="text" name="Name" placeholder="Name" required="">
-						<input class="email" name="Email" type="text" placeholder="Email" required="">
-						<input type="text" name="Phone" placeholder="Phone" required="">
-						<textarea name="Message" placeholder="Message" required=""></textarea>
-						<input type="submit" value="SUBMIT" >
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!--//contact -->
+
 
 	<!--footer-->
 	<div class="footer">
 		<div class="container">
-			<p>© 2016 Steel Industry. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
+			<p>ClAK Consultants|  W3layouts </p>
 		</div>
 	</div>
 	<!--//footer-->
