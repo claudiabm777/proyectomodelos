@@ -16,7 +16,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!-- //Custom Theme files -->
 <link href="@routes.Assets.versioned("css/bootstrap.css")" type="text/css" rel="stylesheet" media="all">
 <link href="@routes.Assets.versioned("css/style.css")" type="text/css" rel="stylesheet" media="all">
+
 <link rel="stylesheet" href="@routes.Assets.versioned("css/lightbox.css")">
+	<link rel="icon"
+		  type="image/png"
+		  href="@routes.Assets.versioned("images/fav.png")" />
 <!-- js -->
 <script src="@routes.Assets.versioned("js/jquery-1.11.1.min.js")"></script>
 <!-- //js -->
@@ -229,7 +233,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<h4>Asignación de trabajadores</h4>
 						<p>Acá podrás asignar de manera óptima los trabajadores de acuerdo a su tasa de procesamiento de libretas, a través de un algoritmo de programación dinámica. Tendrás que indicar la información de cada trabajador. </p>
 						<p>Ingresa el número de trabajadores:</p>
-						@helper.form(action = routes.HomeController.formprogdina) {
+						@helper.form(action = routes.HomeController.formprogdina, 'class ->  "contact-form") {
 						<form >
 							<input type="text" name="Name"  placeholder="Name" required>
 							<input type="submit" value="¡Ir!">
@@ -252,7 +256,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="services-right">
 						<h4>Una buena opción</h4>
 						<p>Acá puedes ver en conjuto la mejor asignación de los empleados, e indicadores de dicha asignación en el sistema de producción de libretas</p>
-						@helper.form(action = routes.HomeController.formalgoritmo) {
+						@helper.form(action = routes.HomeController.formalgoritmo, 'class ->  "contact-form") {
 						<form >
 							<input type="text" name="Name"  placeholder="Name" required>
 							<input type="submit" value="¡Ir!">
@@ -272,7 +276,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="services-right">
 						<h4>Indicadores del sistema</h4>
 						<p>Acá podras ver algunos indicadores del sistemas de producción de libretas, y estimar dependiendo de los empleados en cáda estación, cuándo se terminará un pedido determinado a través de un modelo de Redes de Jackson </p>
-						@helper.form(action = routes.HomeController.formredjackson) {
+						@helper.form(action = routes.HomeController.formredjackson, 'class ->  "contact-form") {
 						<form >
 							<input type="submit" value="¡Ir!">
 							<div class="clearfix"></div>
