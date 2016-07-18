@@ -229,9 +229,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<h4>Asignación de trabajadores</h4>
 						<p>Acá podrás asignar de manera óptima los trabajadores de acuerdo a su tasa de procesamiento de libretas, a través de un algoritmo de programación dinámica. Tendrás que indicar la información de cada trabajador. </p>
 						<p>Ingresa el número de trabajadores:</p>
-						@helper.form(action = routes.HomeController.index, 'class -> "contact-form") {
+						@helper.form(action = routes.HomeController.formprogdina) {
 						<form >
-							<input type="text"  placeholder="Name" required>
+							<input type="text" name="Name"  placeholder="Name" required>
 							<input type="submit" value="¡Ir!">
 							<div class="clearfix"></div>
 						</form>
@@ -252,8 +252,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="services-right">
 						<h4>Una buena opción</h4>
 						<p>Acá puedes ver en conjuto la mejor asignación de los empleados, e indicadores de dicha asignación en el sistema de producción de libretas</p>
-						@helper.form(action = routes.HomeController.index, 'class -> "contact-form") {
+						@helper.form(action = routes.HomeController.formalgoritmo) {
 						<form >
+							<input type="text" name="Name"  placeholder="Name" required>
 							<input type="submit" value="¡Ir!">
 							<div class="clearfix"></div>
 						</form>
@@ -271,7 +272,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="services-right">
 						<h4>Indicadores del sistema</h4>
 						<p>Acá podras ver algunos indicadores del sistemas de producción de libretas, y estimar dependiendo de los empleados en cáda estación, cuándo se terminará un pedido determinado a través de un modelo de Redes de Jackson </p>
-						@helper.form(action = routes.HomeController.index, 'class -> "contact-form") {
+						@helper.form(action = routes.HomeController.formredjackson) {
 						<form >
 							<input type="submit" value="¡Ir!">
 							<div class="clearfix"></div>

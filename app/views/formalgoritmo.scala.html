@@ -1,0 +1,188 @@
+@(workers: Integer)
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<title>Our project ClAK</title>
+<!-- Custom Theme files -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Taller, Ricardo, corazon, papel, consultoria" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //Custom Theme files -->
+<link href="@routes.Assets.versioned("css/bootstrap.css")" type="text/css" rel="stylesheet" media="all">
+<link href="@routes.Assets.versioned("css/style.css")" type="text/css" rel="stylesheet" media="all">
+<link rel="stylesheet" href="@routes.Assets.versioned("css/lightbox.css")">
+<!-- js -->
+<script src="@routes.Assets.versioned("js/jquery-1.11.1.min.js")"></script>
+<!-- //js -->
+<!--web-fonts-->
+<link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Dosis:400,200,300,500,600,700,800' rel='stylesheet' type='text/css'>
+<!--//web-fonts-->
+<!--circle-chart-->
+<script src="@routes.Assets.versioned("js/jquery.circlechart.js")"></script>
+<!--circle-chart-->
+<style>
+	 table {
+	width:100%;
+	color:white;
+	}
+	th{
+	color:withe;
+	text-align:center;
+	font-family:'Dosis', sans-serif;
+	}
+</style>
+</head>
+<body>
+	<!--header-->
+	<div class="header">
+		<nav class="navbar navbar-default">
+			<div class="container">
+				<div class="navbar-header navbar-left">
+					<h1><a >ClAK <span>Consultants</span></a></h1>
+				</div>
+				<!--navigation-->
+
+				<div class="header-right">
+					<div class="top-nav-text">
+
+
+						</div>
+					</div>
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">					
+						<ul class="nav navbar-nav navbar-left cl-effect-14">
+							<li><a href="@routes.HomeController.index()" class="active">Inicio</a></li>
+							<li><a href="@routes.HomeController.index()" class="scroll">Equipo</a></li>
+							<li><a href="@routes.HomeController.index()" class="scroll">Modelos de solución</a></li>
+							<li><a href="@routes.HomeController.index()" class="scroll">Galería</a></li>
+
+						</ul>		
+						<div class="clearfix"> </div>
+					</div><!--//navigation-->
+				</div>
+				<div class="clearfix"> </div>
+			</div>	
+		</nav>		
+	</div>	
+	<!--//header-->
+
+	<div id="contact" class="contact">
+		<div class="team-info">
+			<div class="container">
+				<h3 class="title">Llena los campos con los tiempos por libreta de tus empleados en cada estación</h3>
+				<div class="contact-form">
+					@helper.form(action = routes.HomeController.formalgoritmolleno) {
+					<form action="#" method="post">
+						@for( a <- 1 to workers){
+						<div>
+							<h1 style="color:white; padding:20px; font-family:'Dosis', sans-serif;">Trabajador @a</h1>
+						</div>
+						<table>
+						<tr>
+						<th>Tiempo estación 1 </th>  <th> Tiempo estación 2</th>   <th> Tiempo estación 3</th>  <th> Tiempo estación 4</th> <th> Tiempo estación 5 </th>
+						</tr>
+						</table>
+						<input type="text" name=@(a+"B") placeholder="Tiempo estación 1" value="3" required="">
+						<input type="text" name=@(a+"C") placeholder="Tiempo estación 2" value="4" required="">
+						<input type="text" name=@(a+"D") placeholder="Tiempo estación 3" value="5" required="">
+						<input type="text" name=@(a+"E") placeholder="Tiempo estación 4" value="3" required="">
+						<input type="text" name=@(a+"F") placeholder="Tiempo estación 5" value="8" required="">
+						<div></div>
+						}
+						<input type="submit" value="Calcular mejor asignación" >
+					</form>
+					}
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--//contact -->
+
+
+	<!--footer-->
+	<div class="footer">
+		<div class="container">
+			<p>ClAK Consultants|  W3layouts </p>
+		</div>
+	</div>
+	<!--//footer-->
+	<!--script for portfolio-->
+	<script src="@routes.Assets.versioned("js/lightbox-plus-jquery.min.js")"> </script>
+	<script src="@routes.Assets.versioned("js/easyResponsiveTabs.js")" type="text/javascript"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$('#horizontalTab').easyResponsiveTabs({
+				type: 'default', //Types: default, vertical, accordion
+				width: 'auto', //auto or any width like 600px
+				fit: true   // 100% fit in a container
+			});
+		});
+	</script>
+	<!--//script for portfolio-->
+	<!--banner Slider starts Here-->
+	<script src="@routes.Assets.versioned("js/responsiveslides.min.js")"></script>
+	<script>
+		$(function () {
+		  // Slideshow 3
+		  $("#slider3").responsiveSlides({
+			auto: true,
+			pager: true,
+			nav: false,
+			speed: 500,
+			namespace: "callbacks",
+			before: function () {
+			  $('.events').append("<li>before event fired.</li>");
+			},
+			after: function () {
+			  $('.events').append("<li>after event fired.</li>");
+			}
+		  });
+
+		});
+	</script>
+	<!--//End-slider-script-->
+	<!-- start-smooth-scrolling-->
+	<script type="text/javascript" src="@routes.Assets.versioned("js/move-top.js")"></script>
+	<script type="text/javascript" src="@routes.Assets.versioned("js/easing.js")"></script>
+	<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){
+					event.preventDefault();
+
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				});
+			});
+	</script>
+	<!--//end-smooth-scrolling-->
+	<!--smooth-scrolling-of-move-up-->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear'
+			};
+			*/
+
+			$().UItoTop({ easingType: 'easeOutQuart' });
+
+		});
+	</script>
+	<!--//smooth-scrolling-of-move-up-->
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="@routes.Assets.versioned("js/bootstrap.js")"></script>
+</body>
+</html>

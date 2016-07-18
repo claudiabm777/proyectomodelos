@@ -776,14 +776,14 @@ img.zoom-img:hover,.portfolio-grids:hover img.zoom-img{
     color: #fff;
 }
 .contact input[type="text"] {
-    width: 31.6%;
+    width: 20%;
     color: #fff;
     float: left;
     background: none;
     outline: none;
     font-size: 1em;
     padding: .8em 1em;
-    margin-bottom: 2em;
+    margin-bottom: 6em;
     border: solid 1px #fff;
     -webkit-appearance: none;
     display: inline-block;
