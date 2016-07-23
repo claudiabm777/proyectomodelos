@@ -1,0 +1,669 @@
+@( wi:Double,tasa:Double, diasp:Double,lq:Double,ls:Double,l:Double,wq:Double,ws:Double,w:Double,e1:Estacion,e2:Estacion,e3:Estacion,e4:Estacion,e5:Estacion,lsi:Double,d1:Integer,d2:Integer,d3:Integer,d4:Integer,d5:Integer)
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Our project ClAK</title>
+    <!-- Custom Theme files -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Taller, Ricardo, corazon, papel, consultoria" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+    <!-- //Custom Theme files -->
+    <link href="@routes.Assets.versioned("css/bootstrap.css")" type="text/css" rel="stylesheet" media="all">
+    <link href="@routes.Assets.versioned("css/style.css")" type="text/css" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="@routes.Assets.versioned("css/lightbox.css")">
+    <link rel="icon"
+          type="image/png"
+          href="@routes.Assets.versioned("images/fav.png")" />
+
+    <!-- js -->
+    <script src="@routes.Assets.versioned("js/jquery-1.11.1.min.js")"></script>
+
+<!-- //js -->
+<!--web-fonts-->
+<link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Dosis:400,200,300,500,600,700,800' rel='stylesheet' type='text/css'>
+<!--//web-fonts-->
+<!--circle-chart-->
+<script src="@routes.Assets.versioned("js/jquery.circlechart.js")"></script>
+    <!--circle-chart-->
+
+</head>
+
+
+
+<body>
+<!--header-->
+<div class="header">
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header navbar-left">
+                <h1><a >ClAK <span>Consultants</span></a></h1>
+            </div>
+            <!--navigation-->
+
+            <div class="header-right">
+                <div class="top-nav-text">
+
+
+                </div>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-left cl-effect-14">
+                    <li><a href="@routes.HomeController.index()" class="active">Inicio</a></li>
+                    <li><a href="@routes.HomeController.index()" >Equipo</a></li>
+                    <li><a href="@routes.HomeController.index()" >Modelos de solución</a></li>
+                    <li><a href="@routes.HomeController.index()" >Galería</a></li>
+
+                </ul>
+                <div class="clearfix"> </div>
+            </div><!--//navigation-->
+        </div>
+        <div class="clearfix"> </div>
+
+    </nav>
+</div>
+
+
+<div class="about">
+    <div class="container">
+        <div class="about-text">
+            <h4>Estadísticas del sistema</h4>
+            <p>De acuerdo a los datos igresados anteriormente, a continuación puede consultar algunas medidas de desempeño del sistema de producción.   </p>
+            <p>De acuerdo con la información suministrada, usted terminará el pedido en: @diasp dias laborales</p>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+
+<script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
+
+<div style="width: 300px; height: 250px; margin: 0 auto">
+    <div id="container-speed" style="width: 300px; height: 200px; float: center"></div>
+</div>
+<script>
+    $(function () {
+
+    var gaugeOptions = {
+
+        chart: {
+            type: 'solidgauge'
+        },
+
+        title: null,
+
+        pane: {
+            center: ['50%', '85%'],
+            size: '150%',
+            startAngle: -90,
+            endAngle: 90,
+            background: {
+                backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || '#EEE',
+                innerRadius: '60%',
+                outerRadius: '100%',
+                shape: 'arc'
+            }
+        },
+
+        tooltip: {
+            enabled: false
+        },
+
+        // the value axis
+        yAxis: {
+            stops: [
+                [0.1, '#55BF3B'], // green
+                [0.5, '#DDDF0D'], // yellow
+                [0.9, '#DF5353'] // red
+            ],
+            lineWidth: 0,
+            minorTickInterval: null,
+            tickPixelInterval: 400,
+            tickWidth: 0,
+            title: {
+                y: -70
+            },
+            labels: {
+                y: 16
+            }
+        },
+
+        plotOptions: {
+            solidgauge: {
+                dataLabels: {
+                    y: 5,
+                    borderWidth: 0,
+                    useHTML: true
+                }
+            }
+        }
+    };
+
+    // The speed gauge
+    $('#container-speed').highcharts(Highcharts.merge(gaugeOptions, {
+        yAxis: {
+            min: 0,
+            max: 400,
+            title: {
+                text: 'Tasa de producción de libretas'
+            }
+        },
+
+        credits: {
+            enabled: false
+        },
+
+        series: [{
+            name: 'tasa de producción',
+            data: [@tasa],
+            dataLabels: {
+                format: '<div style="text-align:center"><span style="font-size:25px;color:' +
+                    ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black') + '">{y}</span><br/>' +
+                       '<span style="font-size:12px;color:silver">lib/día</span></div>'
+            },
+            tooltip: {
+                valueSuffix: ' lib/día'
+            }
+        }]
+
+    }));
+
+
+
+    // Bring life to the dials
+    setTimeout(function () {
+        // Speed
+        var chart = $('#container-speed').highcharts(),
+            point,
+            newVal,
+            inc;
+
+
+    }, 2000);
+
+
+});
+</script>
+
+
+
+
+
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<table style="margin:auto">
+    <tr>
+        <td>
+            <div id="container2" style="height: 600px; min-width: 1000px; max-width: 1000px; margin: 0 auto"></div>
+            <script>
+    $(function () {
+    $('#container2').highcharts({
+
+        chart: {
+            type: 'bubble',
+            plotBorderWidth: 1,
+            zoomType: 'xy'
+        },
+
+        legend: {
+            enabled: false
+        },
+
+        title: {
+            text: 'Estadísticas de cada estación'
+        },
+
+        subtitle: {
+            text: 'Trabajadores asignados y tasas de servicio'
+        },
+
+        xAxis: {
+            gridLineWidth: 1,
+            title: {
+                text: 'Estaciones'
+            },
+            labels: {
+                format: '{value} '
+            },
+            plotLines: [{
+                color: 'black',
+                dashStyle: 'dot',
+                width: 2,
+                value: 65,
+                label: {
+                    rotation: 0,
+                    y: 15,
+                    style: {
+                        fontStyle: 'italic'
+                    },
+                    text: 'Estaciones'
+                },
+                zIndex: 3
+            }]
+        },
+
+        yAxis: {
+            startOnTick: false,
+            endOnTick: false,
+            title: {
+                text: 'Tasas (libretas/minutos)'
+            },
+            labels: {
+                format: '{value} '
+            },
+            maxPadding: 0.2,
+            plotLines: [{
+                color: 'black',
+                dashStyle: 'dot',
+                width: 2,
+                value: 50,
+                label: {
+                    align: 'right',
+                    style: {
+                        fontStyle: 'italic'
+                    },
+                    text: 'Estaciones de trabajo',
+                    x: -10
+                },
+                zIndex: 3
+            }]
+        },
+
+        tooltip: {
+            useHTML: true,
+            headerFormat: '<table>',
+            pointFormat: '<tr><th colspan="2"><h3>{point.country}</h3></th></tr>' +
+                '<tr><th>Estación: </th><td>Estación {point.x}</td></tr>' +
+                '<tr><th>Tasa: </th><td>{point.y} lib/min</td></tr>' +
+                '<tr><th>Trabajadores:</th><td>{point.z} trabajadores</td></tr>',
+            footerFormat: '</table>',
+            followPointer: true
+        },
+
+        plotOptions: {
+            series: {
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.name}'
+                }
+            }
+        },
+
+        series: [{
+            data: [
+                { x: 1, y: @(e1.tasaServicio),z:@d1, name: 'E1', country: 'Estación 1' },
+                { x: 2, y: @(e2.tasaServicio),z:@d2, name: 'E2', country: 'Estación 2' },
+                { x: 3, y: @(e3.tasaServicio),z:@d3, name: 'E3', country: 'Estación 3' },
+                { x: 4, y: @(e4.tasaServicio),z:@d4, name: 'E4', country: 'Estación 4' },
+                { x: 5, y: 0.2, z: 0.0, name: 'E5', country: 'Estación 5' },
+                { x: 6, y: @(e5.tasaServicio),z:@d5, name: 'E6', country: 'Estación 6' }
+            ]
+        }]
+
+    });
+});
+
+</script>
+
+        </td>
+        <td>
+            <script src="https://code.highcharts.com/highcharts.js"></script>
+            <script src="https://code.highcharts.com/modules/heatmap.js"></script>
+            <script src="https://code.highcharts.com/modules/treemap.js"></script>
+            <div id="container" style="height: 400px; min-width: 510px; max-width: 600px; margin: 0 auto"></div>
+
+            <script>
+    $(function () {
+    $('#container').highcharts({
+        colorAxis: {
+            minColor: '#FFFFFF',
+            maxColor: Highcharts.getOptions().colors[0]
+        },
+        series: [{
+            type: 'treemap',
+            layoutAlgorithm: 'squarified',
+            data: [{
+                name: 'Estación 1',
+                value: @d1,
+                colorValue: @d1
+            }, {
+                name: 'Estación 2',
+                value: @d2,
+                colorValue: @d2
+            }, {
+                name: 'Estación 3',
+                value: @d3,
+                colorValue: @d3
+            }, {
+                name: 'Estación 4',
+                value: @d4,
+                colorValue: @d4
+            }, {
+                name: 'Estación 6',
+                value: @d5,
+                colorValue: @d5
+            }]
+        }],
+        title: {
+            text: 'Trabajadores por estación'
+        }
+    });
+});
+</script>
+        </td>
+    </tr>
+</table>
+
+<table style="margin:auto">
+    <tr>
+        <td>
+            <div id="container4" style="min-width: 800px; max-width: 800px; height: 600px; margin: 0 auto; margin-bottom:3em"></div>
+            <script>
+
+    $(function () {
+    $('#container4').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Tiempos de una libreta en cada estación'
+        },
+        subtitle: {
+            text: '(tiempos promedio esperados)'
+        },
+        xAxis: {
+            categories: [
+
+                'Estación 1',
+                'Estación 2',
+                'Estación 3',
+                'Estación 4',
+                'Estación 5',
+                'Estación 6'
+            ],
+            crosshair: true
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Tiempo (minutos)'
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y:.1f} libretas/minutos</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+        series: [ {
+            color:"Red",
+            name: 'Tiempo en espera',
+            data: [@(e1.wq), @(e2.wq), @(e3.wq), @(e4.wq), 0, @(e5.wq)]
+
+        },
+        {
+            color:"Orange",
+            name: 'Tiempo en proceso',
+            data: [@(e1.ws), @(e2.ws), @(e3.ws), @(e4.ws), @wi, @(e5.ws)]
+
+        },
+        {
+            color:"Green",
+            name: 'Tiempo total en la estación',
+            data: [@(e1.w), @(e2.w), @(e3.w), @(e4.w), @wi, @(e5.w)]
+
+        }]
+    });
+});
+
+    </script>
+        </td>
+        <td>
+            <script src="https://code.highcharts.com/highcharts.js"></script>
+            <script src="https://code.highcharts.com/highcharts-3d.js"></script>
+            <script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+            <div id="container5" style="height: 400px"></div>
+
+            <script>
+    $(function () {
+    $('#container5').highcharts({
+        chart: {
+            type: 'pie',
+            options3d: {
+                enabled: true,
+                alpha: 45
+            }
+        },
+        title: {
+            text: 'Tiempos del proceso de producción de libretas'
+        },
+        subtitle: {
+            text: 'Tiempos esperados'
+        },
+        plotOptions: {
+            pie: {
+                innerSize: 100,
+                depth: 45
+            }
+        },
+        series: [{
+            name: 'Tiempos',
+            data: [
+                ['Tiempo en espera', @wq],
+                ['Tiempo en proceso', @ws]
+            ]
+        }]
+    });
+});
+</script>
+        </td>
+    </tr>
+    <tr>
+        <td>
+
+            <div id="container3" style="min-width: 800px; max-width: 800px; height: 600px; margin: 0 auto; margin-bottom:3em"></div>
+            <script>
+
+    $(function () {
+    $('#container3').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Libretas promedio en las estaciones de trabajo'
+        },
+        subtitle: {
+            text: '(Libretas esperadas)'
+        },
+        xAxis: {
+            categories: [
+
+                'Estación 1',
+                'Estación 2',
+                'Estación 3',
+                'Estación 4',
+                'Estación 5',
+                'Estación 6'
+            ],
+            crosshair: true
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Libretas'
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y:.1f} libretas/minutos</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+        series: [ {
+            color:"Purple",
+            name: 'Libretas en espera',
+            data: [@(e1.lq), @(e2.lq), @(e3.lq), @(e4.lq), 0, @(e5.lq)]
+
+        },
+        {
+            color:"Orange",
+            name: 'Libretas en proceso',
+            data: [@(e1.ls), @(e2.ls), @(e3.ls), @(e4.ls), @lsi, @(e5.ls)]
+
+        },
+        {
+            color:"Green",
+            name: 'Libretas totales en la estación',
+            data: [@(e1.l), @(e2.l), @(e3.l), @(e4.l), @lsi, @(e5.l)]
+
+        }]
+    });
+});
+
+    </script>
+
+        </td>
+        <td>
+
+
+            <script src="https://code.highcharts.com/highcharts.js"></script>
+            <script src="https://code.highcharts.com/highcharts-3d.js"></script>
+            <script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+            <div id="container7" style="height: 400px"></div>
+
+            <script>
+    $(function () {
+    $('#container7').highcharts({
+        chart: {
+            type: 'pie',
+            options3d: {
+                enabled: true,
+                alpha: 45
+            }
+        },
+        title: {
+            text: 'Libretas en el sistema de producción de libretas'
+        },
+        subtitle: {
+            text: 'Libretas esperadas'
+        },
+        plotOptions: {
+            pie: {
+                innerSize: 100,
+                depth: 45
+            }
+        },
+        series: [{
+            name: 'Libretas',
+            data: [
+                ['Libretas en espera', @lq],
+                ['Libretas en proceso', @ls]
+            ]
+        }]
+    });
+});
+</script>
+
+
+        </td>
+    </tr>
+</table>
+
+
+<div id="container22" style="min-width: 310px;  height: 400px; margin: 0 auto; margin-bottom:3em"></div>
+<script>
+
+    $(function () {
+    $('#container22').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Tasas de las estaciones de trabajo'
+        },
+        subtitle: {
+            text: '(Tasas de servicio)'
+        },
+        xAxis: {
+            categories: [
+
+                'Estación 1',
+                'Estación 2',
+                'Estación 3',
+                'Estación 4',
+                'Estación 5',
+                'Estación 6'
+            ],
+            crosshair: true
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Tasas (libretas/minutos)'
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y:.1f} libretas/minutos</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+        series: [ {
+            color:"Purple",
+            name: 'Tasas',
+            data: [@(e1.tasaServicio), @(e2.tasaServicio), @(e3.tasaServicio), @(e4.tasaServicio), 0, @(e5.tasaServicio)]
+
+        }]
+    });
+});
+
+    </script>
+
+
+
+<!--footer-->
+<div class="footer">
+    <div class="container">
+        <p>ClAK Consultants|  W3layouts </p>
+    </div>
+</div>
+</body></html>

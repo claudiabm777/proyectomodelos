@@ -1,0 +1,308 @@
+@( m: Array[Array[Integer]],n: Integer, t1: Integer, t2: Integer, t3: Integer, t4: Integer, t5: Integer,d1:Double, d2: Double, d3: Double, d4: Double, d5:Double, d6:Double)
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Our project ClAK</title>
+    <!-- Custom Theme files -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Taller, Ricardo, corazon, papel, consultoria" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+    <!-- //Custom Theme files -->
+    <link href="@routes.Assets.versioned("css/bootstrap.css")" type="text/css" rel="stylesheet" media="all">
+    <link href="@routes.Assets.versioned("css/style.css")" type="text/css" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="@routes.Assets.versioned("css/lightbox.css")">
+    <link rel="icon"
+          type="image/png"
+          href="@routes.Assets.versioned("images/fav.png")" />
+
+    <!-- js -->
+    <script src="@routes.Assets.versioned("js/jquery-1.11.1.min.js")"></script>
+
+<!-- //js -->
+<!--web-fonts-->
+<link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Dosis:400,200,300,500,600,700,800' rel='stylesheet' type='text/css'>
+<!--//web-fonts-->
+<!--circle-chart-->
+<script src="@routes.Assets.versioned("js/jquery.circlechart.js")"></script>
+    <!--circle-chart-->
+
+</head>
+
+
+
+<body>
+<!--header-->
+<div class="header">
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header navbar-left">
+                <h1><a >ClAK <span>Consultants</span></a></h1>
+            </div>
+            <!--navigation-->
+
+            <div class="header-right">
+                <div class="top-nav-text">
+
+
+                </div>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-left cl-effect-14">
+                    <li><a href="@routes.HomeController.index()" class="active">Inicio</a></li>
+                    <li><a href="@routes.HomeController.index()" >Equipo</a></li>
+                    <li><a href="@routes.HomeController.index()" >Modelos de solución</a></li>
+                    <li><a href="@routes.HomeController.index()" >Galería</a></li>
+
+                </ul>
+                <div class="clearfix"> </div>
+            </div><!--//navigation-->
+        </div>
+        <div class="clearfix"> </div>
+
+    </nav>
+</div>
+
+
+<div class="about">
+    <div class="container">
+        <div class="about-text">
+            <h4>Resultados óptimos para la asignación de trabajadores</h4>
+            <p>De acuerdo a los datos igresados anteriormente, a continuación puede consultar la asignación óptima de sus trabajadores en las diferentes estaciones del taller. También podra encontrar algunas gráficas con estadísticas sobre esta asignación.  </p>
+        </div>
+    </div>
+</div>
+
+
+<div class="esp" style="padding-bottom:3em">
+<table class="esp" cellspacing='0' style="margin: auto"> <!-- cellspacing='0' is important, must stay -->
+
+    <!-- Table Header -->
+    <thead>
+    <tr>
+        <th>Trabajador</th>
+        <th>Estación 1</th>
+        <th>Estación 2</th>
+        <th>Estación 3</th>
+        <th>Estación 4</th>
+        <th>Estación 5</th>
+    </tr>
+    </thead>
+    <!-- Table Header -->
+
+    <!-- Table Body -->
+    <tbody>
+
+    @for(i <- 0 to n-1){
+    <tr>
+        <td>@(i+1)</td>
+        @for(j <- 0 to 4){
+        @if(m(j)(i)==1){
+        <td> X </td>
+        }else{
+        <td> - </td>
+        }
+        }
+    </tr><!-- Table Row -->
+    }
+
+
+    </tbody>
+    <!-- Table Body -->
+
+</table>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<div id="container" style="min-width: 310px; max-width: 900px; height: 400px; margin: 0 auto; margin-bottom:3em"></div>
+<script>
+
+    $(function () {
+    $('#container').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Tasas de las estaciones de trabajo'
+        },
+        subtitle: {
+            text: '(Tasas de servicio)'
+        },
+        xAxis: {
+            categories: [
+
+                'Estación 1',
+                'Estación 2',
+                'Estación 3',
+                'Estación 4',
+                'Estación 5',
+                'Estación 6'
+            ],
+            crosshair: true
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Tasas (libretas/minutos)'
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y:.1f} libretas/minutos</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+        series: [ {
+            color:"Purple",
+            name: 'Tasas',
+            data: [@d1, @d2, @d3, @d4, @d5, @d6]
+
+        }]
+    });
+});
+
+    </script>
+
+
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+<div id="container2" style="height: 400px; min-width: 310px; max-width: 900px; margin: 0 auto"></div>
+<script>
+    $(function () {
+    $('#container2').highcharts({
+
+        chart: {
+            type: 'bubble',
+            plotBorderWidth: 1,
+            zoomType: 'xy'
+        },
+
+        legend: {
+            enabled: false
+        },
+
+        title: {
+            text: 'Estadísticas de cada estación'
+        },
+
+        subtitle: {
+            text: 'Trabajadores asignados y tasas de servicio'
+        },
+
+        xAxis: {
+            gridLineWidth: 1,
+            title: {
+                text: 'Estaciones'
+            },
+            labels: {
+                format: '{value} '
+            },
+            plotLines: [{
+                color: 'black',
+                dashStyle: 'dot',
+                width: 2,
+                value: 65,
+                label: {
+                    rotation: 0,
+                    y: 15,
+                    style: {
+                        fontStyle: 'italic'
+                    },
+                    text: 'Estaciones'
+                },
+                zIndex: 3
+            }]
+        },
+
+        yAxis: {
+            startOnTick: false,
+            endOnTick: false,
+            title: {
+                text: 'Tasas (libretas/minutos)'
+            },
+            labels: {
+                format: '{value} '
+            },
+            maxPadding: 0.2,
+            plotLines: [{
+                color: 'black',
+                dashStyle: 'dot',
+                width: 2,
+                value: 50,
+                label: {
+                    align: 'right',
+                    style: {
+                        fontStyle: 'italic'
+                    },
+                    text: 'Estaciones de trabajo',
+                    x: -10
+                },
+                zIndex: 3
+            }]
+        },
+
+        tooltip: {
+            useHTML: true,
+            headerFormat: '<table>',
+            pointFormat: '<tr><th colspan="2"><h3>{point.country}</h3></th></tr>' +
+                '<tr><th>Estación: </th><td>Estación {point.x}</td></tr>' +
+                '<tr><th>Tasa: </th><td>{point.y} lib/min</td></tr>' +
+                '<tr><th>Trabajadores:</th><td>{point.z} trabajadores</td></tr>',
+            footerFormat: '</table>',
+            followPointer: true
+        },
+
+        plotOptions: {
+            series: {
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.name}'
+                }
+            }
+        },
+
+        series: [{
+            data: [
+                { x: 1, y: @d1, z: @t1, name: 'E1', country: 'Estación 1' },
+                { x: 2, y: @d2, z: @t2, name: 'E2', country: 'Estación 2' },
+                { x: 3, y: @d3, z: @t3, name: 'E3', country: 'Estación 3' },
+                { x: 4, y: @d4, z: @t4, name: 'E4', country: 'Estación 4' },
+                { x: 5, y: @d5, z: 0.0, name: 'E5', country: 'Estación 5' },
+                { x: 6, y: @d6, z: @t5, name: 'E6', country: 'Estación 6' }
+            ]
+        }]
+
+    });
+});
+</script>
+
+<!--footer-->
+<div class="footer">
+    <div class="container">
+        <p>ClAK Consultants|  W3layouts </p>
+    </div>
+</div>
+</body></html>
