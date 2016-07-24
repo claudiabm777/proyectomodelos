@@ -1,8 +1,11 @@
 package models;
 
+import java.util.ArrayList;
+
 public class AlgoritmoIntegrador {
 	public RedJackson redJ;
 	public ProgramacionDinamica prog;
+	public Integer[][] m;
 	
 	public void algoritmo(Integer numeroTrabajadores,Double [][]tt){
 		Integer[] g=new Integer[5];
@@ -12,13 +15,16 @@ public class AlgoritmoIntegrador {
 		Double tasa=-1.0;
 		boolean seguir=true;
 		int nn=0;
+		ProgramacionDinamica pr=new ProgramacionDinamica(numeroTrabajadores, g, tt);
+		ArrayList<ArrayList<Nodo>>nodo=pr.nodos();
 		while(seguir && nn<=0){
 			try{
 				System.out.println(nn+"  nn!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" );
 				ProgramacionDinamica p=new ProgramacionDinamica(numeroTrabajadores, g, tt);
 
 				nn++;
-				Integer[][]matriz=p.determinarAsignacion();
+
+				Integer[][]matriz=p.determinarAsignacion(nodo);
 
 				Double[]miu=new Double[6];
 				Integer[]s=new Integer[5];
@@ -44,6 +50,7 @@ public class AlgoritmoIntegrador {
 				if(nn==0){
 					prog=p;
 					redJ=red;
+					m=matriz;
 				}
 				if(red.tasaEntrada>tasa){
 					if(red.cuelloB==5){
@@ -53,6 +60,7 @@ public class AlgoritmoIntegrador {
 					}
 					prog=p;
 					redJ=red;
+					m=matriz;
 					tasa=red.tasaEntrada;
 				}else{
 					seguir=false;

@@ -1,9 +1,6 @@
 package controllers;
 
-import models.AlgoritmoIntegrador;
-import models.ProgramacionDinamica;
-import models.RedJackson;
-import models.Trabajador;
+import models.*;
 import play.data.DynamicForm;
 import play.mvc.*;
 
@@ -89,7 +86,8 @@ public class HomeController extends Controller {
             Integer[] g = {0, 0, 0, 0, 0};
 
             ProgramacionDinamica p = new ProgramacionDinamica(num, g, tt);
-            Integer[][] m = p.determinarAsignacion();
+            ArrayList<ArrayList<Nodo>>nods=p.nodos();
+            Integer[][] m = p.determinarAsignacion(nods);
             Double[] miu = new Double[6];
             Integer[] s = new Integer[5];
             for (int i = 0; i < 5; i++) {
@@ -154,7 +152,7 @@ public class HomeController extends Controller {
             a.algoritmo(num, tt);
             ProgramacionDinamica p=a.prog;
             RedJackson red=a.redJ;
-            Integer[][] m = p.determinarAsignacion();
+            Integer[][] m = a.m;
 
 
 

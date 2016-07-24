@@ -90,10 +90,13 @@ public class ProgramacionDinamica {
 		}
 	}
 	
-	
-	public Integer[][] determinarAsignacion(){
+	public ArrayList<ArrayList<Nodo>> nodos(){
 		ArrayList<ArrayList<Nodo>> nodos=crearNodos();
 		if(nodos==null){return null;}
+		return nodos;
+	}
+	public Integer[][] determinarAsignacion(ArrayList<ArrayList<Nodo>>nodos){
+
 
 		f1=new Double [1][1];
 		f2=new Double [nodos.get(0).size()][1];

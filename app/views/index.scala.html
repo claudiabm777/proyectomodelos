@@ -256,6 +256,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="services-right">
 						<h4>Una buena opción</h4>
 						<p>Acá puedes ver en conjuto la mejor asignación de los empleados, e indicadores de dicha asignación en el sistema de producción de libretas</p>
+						<p>Ingresa el número de trabajadores:</p>
 						@helper.form(action = routes.HomeController.formalgoritmo, 'class ->  "contact-form") {
 						<form >
 							<input type="text" name="Name"  placeholder="Name" required>
@@ -274,8 +275,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<span class="glyphicon glyphicon-check"></span>
 					</div>
 					<div class="services-right">
-						<h4>Indicadores del sistema</h4>
-						<p>Acá podras ver algunos indicadores del sistemas de producción de libretas, y estimar dependiendo de los empleados en cáda estación, cuándo se terminará un pedido determinado a través de un modelo de Redes de Jackson </p>
+						<h4>Indicadores del sistema y tiempo de entrega</h4>
+						<p>Acá podras ver algunos indicadores del sistemas de producción de libretas, el tiempo estimado de entrega del pedido especificado, y estimar dependiendo de los empleados en cáda estación, cuándo se terminará un pedido determinado a través de un modelo de Redes de Jackson </p>
+						<p>Ingresa el número de libretas de tu pedido (número de libretas):</p>
 						@helper.form(action = routes.HomeController.formredjackson, 'class ->  "contact-form") {
 						<form >
 							<input type="text" name="Name"  placeholder="Name" required>
