@@ -14,13 +14,16 @@ public class AlgoritmoIntegrador {
 		while(seguir){
 			try{
 				ProgramacionDinamica p=new ProgramacionDinamica(numeroTrabajadores, g, tt);
+
 				Integer[][]matriz=p.determinarAsignacion();
+
 				Double[]miu=new Double[6];
 				Integer[]s=new Integer[5];
 				for(int i=0;i<5;i++){
 					miu[i]=0.0;
 					s[i]=0;
 				}
+
 				miu[5]=0.0;
 				for(int i=0;i<5;i++){
 					for(int j=0;j<numeroTrabajadores;j++){
@@ -34,9 +37,9 @@ public class AlgoritmoIntegrador {
 				}
 				miu[5]=miu[4];
 				miu[4]=0.2;
-				System.out.println("dffd");
+
 				RedJackson red=new RedJackson(s, miu);
-				System.out.println(red.tasaEntrada+" -----tasa");
+
 				if(red.tasaEntrada>tasa){
 					if(red.cuelloB==5){
 						g[red.cuelloB-1]+=1;
@@ -53,6 +56,7 @@ public class AlgoritmoIntegrador {
 				seguir=false;
 			}
 		}
+
 	}
 	
 

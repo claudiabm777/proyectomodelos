@@ -31,6 +31,7 @@ public class ProgramacionDinamica {
 		this.numeroTrabajadores=numeroTrabajadores;
 		this.g=g;
 		this.tt=tt;
+		System.out.println("tamano 1: ");
 	}
 	
 	private ArrayList<ArrayList<Nodo>> crearNodos(){
@@ -51,7 +52,7 @@ public class ProgramacionDinamica {
 			for(int j=0;j<5;j++){
 				if(j+1<=n.suma() && 5-j-1<=n.sumaInvertida()){
 					nodosE.get(j).add(n);
-					System.out.println(n.toString()+"  "+j);
+
 				}
 			}
 			
@@ -94,6 +95,7 @@ public class ProgramacionDinamica {
 	public Integer[][] determinarAsignacion(){
 		ArrayList<ArrayList<Nodo>> nodos=crearNodos();
 		if(nodos==null){return null;}
+
 		f1=new Double [1][1];
 		f2=new Double [nodos.get(0).size()][1];
 		f3=new Double [nodos.get(1).size()][1];
@@ -181,7 +183,7 @@ public class ProgramacionDinamica {
 						break;
 					}
 				}
-				System.out.println(suma+"  "+nodos.get(2).get(k).decisiones.toString()+" -- "+nodos.get(3).get(i).decisiones.toString());
+				//System.out.println(suma+"  "+nodos.get(2).get(k).decisiones.toString()+" -- "+nodos.get(3).get(i).decisiones.toString());
 				
 				costos34[k][i]=suma;
 			}
@@ -201,13 +203,13 @@ public class ProgramacionDinamica {
 						break;
 					}
 				}
-				System.out.println(suma+"  "+nodos.get(3).get(k).decisiones.toString()+" -- "+nodos.get(4).get(i).decisiones.toString());
+				//System.out.println(suma+"  "+nodos.get(3).get(k).decisiones.toString()+" -- "+nodos.get(4).get(i).decisiones.toString());
 				
 				costos45[k][i]=suma;
 				
 			}
 		}
-		
+
 		ArrayList<Double[][]>costs=new ArrayList<Double[][]>();
 		ArrayList<Double[][]>fs=new ArrayList<Double[][]>();
 		ArrayList<Integer[]>pi=new ArrayList<Integer[]>();
@@ -231,18 +233,14 @@ public class ProgramacionDinamica {
 		pi.add(pi5);
 		pi.add(pi6);
 		System.out.println(funcionRecursivaPD(costs,0,0,fs,pi));
+		System.out.println("tamano 2: ");
 		Integer n1=pi1[0];
 		Integer n2=pi2[pi1[0]];
 		Integer n3=pi3[pi2[pi1[0]]];
 		Integer n4=pi4[pi3[pi2[pi1[0]]]];
 		Integer n5=pi5[pi4[pi3[pi2[pi1[0]]]]];
 		Integer n6=pi6[pi5[pi4[pi3[pi2[pi1[0]]]]]];
-		System.out.println(n6);
-		System.out.println(nodos.get(4).get(n5));
-		System.out.println(nodos.get(3).get(n4));
-		System.out.println(nodos.get(2).get(n3));
-		System.out.println(nodos.get(1).get(n2));
-		System.out.println(nodos.get(0).get(n1));
+		System.out.println("tamano 3: ");
 		Integer epoca1=0;
 		Integer epoca2=0;
 		Integer epoca3=0;
@@ -255,7 +253,7 @@ public class ProgramacionDinamica {
 			matrizResultado[2][k]=Math.max(0,nodos.get(2).get(n3).decisiones.get(k)-nodos.get(1).get(n2).decisiones.get(k));
 			matrizResultado[3][k]=Math.max(0,nodos.get(3).get(n4).decisiones.get(k)-nodos.get(2).get(n3).decisiones.get(k));
 			matrizResultado[4][k]=Math.max(0,nodos.get(4).get(n5).decisiones.get(k)-nodos.get(3).get(n4).decisiones.get(k));
-			System.out.println(matrizResultado[0][k]);
+			//System.out.println(matrizResultado[0][k]);
 			
 		}
 		return matrizResultado;
