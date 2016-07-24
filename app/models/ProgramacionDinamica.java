@@ -31,7 +31,6 @@ public class ProgramacionDinamica {
 		this.numeroTrabajadores=numeroTrabajadores;
 		this.g=g;
 		this.tt=tt;
-		System.out.println("tamano 1: ");
 	}
 	
 	private ArrayList<ArrayList<Nodo>> crearNodos(){
@@ -233,14 +232,14 @@ public class ProgramacionDinamica {
 		pi.add(pi5);
 		pi.add(pi6);
 		System.out.println(funcionRecursivaPD(costs,0,0,fs,pi));
-		System.out.println("tamano 2: ");
+
 		Integer n1=pi1[0];
 		Integer n2=pi2[pi1[0]];
 		Integer n3=pi3[pi2[pi1[0]]];
 		Integer n4=pi4[pi3[pi2[pi1[0]]]];
 		Integer n5=pi5[pi4[pi3[pi2[pi1[0]]]]];
 		Integer n6=pi6[pi5[pi4[pi3[pi2[pi1[0]]]]]];
-		System.out.println("tamano 3: ");
+
 		Integer epoca1=0;
 		Integer epoca2=0;
 		Integer epoca3=0;
@@ -253,7 +252,7 @@ public class ProgramacionDinamica {
 			matrizResultado[2][k]=Math.max(0,nodos.get(2).get(n3).decisiones.get(k)-nodos.get(1).get(n2).decisiones.get(k));
 			matrizResultado[3][k]=Math.max(0,nodos.get(3).get(n4).decisiones.get(k)-nodos.get(2).get(n3).decisiones.get(k));
 			matrizResultado[4][k]=Math.max(0,nodos.get(4).get(n5).decisiones.get(k)-nodos.get(3).get(n4).decisiones.get(k));
-			//System.out.println(matrizResultado[0][k]);
+
 			
 		}
 		return matrizResultado;

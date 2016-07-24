@@ -11,10 +11,13 @@ public class AlgoritmoIntegrador {
 		}
 		Double tasa=-1.0;
 		boolean seguir=true;
-		while(seguir){
+		int nn=0;
+		while(seguir && nn<=0){
 			try{
+				System.out.println(nn+"  nn!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" );
 				ProgramacionDinamica p=new ProgramacionDinamica(numeroTrabajadores, g, tt);
 
+				nn++;
 				Integer[][]matriz=p.determinarAsignacion();
 
 				Double[]miu=new Double[6];
@@ -31,15 +34,17 @@ public class AlgoritmoIntegrador {
 						s[i]+=matriz[i][j];
 						
 					}
-					System.out.println(s[i]+" -- "+i);
-					System.out.println(miu[i]+" -- "+i);
+
 
 				}
 				miu[5]=miu[4];
 				miu[4]=0.2;
 
 				RedJackson red=new RedJackson(s, miu);
-
+				if(nn==0){
+					prog=p;
+					redJ=red;
+				}
 				if(red.tasaEntrada>tasa){
 					if(red.cuelloB==5){
 						g[red.cuelloB-1]+=1;

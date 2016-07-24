@@ -152,7 +152,13 @@ public class HomeController extends Controller {
             AlgoritmoIntegrador a=new AlgoritmoIntegrador();
 
             a.algoritmo(num, tt);
-            return ok(resultadoalgor.render());
+            ProgramacionDinamica p=a.prog;
+            RedJackson red=a.redJ;
+            Integer[][] m = p.determinarAsignacion();
+
+
+
+            return ok(resultadoalgor.render(num,m,red.ls_inf*red.ls_inf*0.2,red.tasaEntrada*60*8,red.darLqRed(),red.darLsRed(),red.darLRed(),red.darWqRed(),red.darWsRed(),red.darWRed(),red.est1,red.est2,red.est3,red.est4,red.est6,red.ls_inf));
         }catch (Throwable e){
             e.printStackTrace();
             return ok(error.render());
