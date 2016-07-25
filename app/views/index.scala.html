@@ -232,7 +232,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="services-right">
 						<h4>Asignación de trabajadores</h4>
 						<p>Acá podrás asignar de manera óptima los trabajadores de acuerdo a su tasa de procesamiento de libretas, a través de un algoritmo de programación dinámica. Tendrás que indicar la información de cada trabajador. </p>
-						<p>Ingresa el número de trabajadores:</p>
+						<p>Ingresa el número de trabajadores (máximo 9):</p>
 						@helper.form(action = routes.HomeController.formprogdina, 'class ->  "contact-form") {
 						<form >
 							<input type="text" name="Name"  placeholder="Name" required>
@@ -256,7 +256,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="services-right">
 						<h4>Una buena opción</h4>
 						<p>Acá puedes ver en conjuto la mejor asignación de los empleados, e indicadores de dicha asignación en el sistema de producción de libretas</p>
-						<p>Ingresa el número de trabajadores:</p>
+						<p>Ingresa el número de trabajadores (maximo 9):</p>
 						@helper.form(action = routes.HomeController.formalgoritmo, 'class ->  "contact-form") {
 						<form >
 							<input type="text" name="Name"  placeholder="Name" required>
